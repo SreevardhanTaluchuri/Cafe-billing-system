@@ -4,14 +4,14 @@ import time
 import datetime
 from tkinter import messagebox
 
-#Basic window is created
-root = Tk()
-root.geometry("1350x50+0+0")
-root.title("Cafe Management Systems")
-root.configure(background = "black")
-#basic window creation ends
 
-#Frames are created
+root = Tk()
+root.geometry("300x50")
+root.title("Cafe Billing Systems")
+root.configure(background = "black")
+
+
+
 Tops = Frame(root, width = 1350, height = 100, bd = 8, relief = "raise")
 Tops.pack(side = TOP)
 
@@ -50,7 +50,7 @@ f1.configure (background = 'black')
 f2.configure (background = 'black')
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HEADING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-lblInfo = Label(Tops, font  = ('arial', 70, 'bold'), text = " \t Cafe Billing System \t\t", bd = 100)
+lblInfo = Label(Tops, font  = ('arial', 70, 'bold'), text = " \t Cafe Billing System \t\t", bd = 60)
 lblInfo.grid(row = 0, column = 0)
 #Frame Creation ends
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HEADING ENDS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
