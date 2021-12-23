@@ -48,15 +48,12 @@ f2ab.pack(side = RIGHT)
 Tops.configure (background = 'black')
 f1.configure (background = 'black')
 f2.configure (background = 'black')
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HEADING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 lblInfo = Label(Tops, font  = ('arial', 70, 'bold'), text = " \t Cafe Billing System \t\t", bd = 60)
 lblInfo.grid(row = 0, column = 0)
 #Frame Creation ends
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HEADING ENDS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>COST OF ITEMS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def CostofItems():
     Item1 = float(E_Latte.get())
     Item2 = float(E_Espresso.get())
@@ -94,15 +91,13 @@ def CostofItems():
     TC = "$" + str('%.2f'%(PriceofDrinks + PriceofCakes + 1.59 + TT))
     TotalCost.set(TC)
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>COST OF ITEMS END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATING METHOD FOR EXIT<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 def qExit():
     qExit = messagebox.askyesno("Quit System", "Do you want to quit?")
     if qExit:
         root.quit()
         return
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Creating Method for EXIT END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RESET METHOD START<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 def reset():
     PaidTax.set("")
     SubTotal.set("")
@@ -162,8 +157,7 @@ def reset():
     txtCappuccino.configure(state = DISABLED)
     txtCarlton_Hill_Cake.configure(state = DISABLED)
     txtQueen_park_Cake.configure(state = DISABLED)
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RESET METHOD END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CHECKBUTTONS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 def chkbutton_value():
 
@@ -247,7 +241,7 @@ def chkbutton_value():
     elif var16.get() == 0:
         txtQueen_park_Cake.configure(state = DISABLED)
         E_Queen_Park_Chocolate_Cake.set("0")
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RECEIPT start<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 def Receipt():
     txtReceipt.delete("1.0", END)
     x = random.randint(10908, 500876)
@@ -295,9 +289,7 @@ def Receipt():
     txtReceipt.insert(END, 'Service Charge:\t'+ServiceCharge.get()+"\tTotal Cost:\t"+ TotalCost.get()+"\n")
 
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RECEIPT END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CHECKBUTTONS END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 var1 = IntVar()
 var2 = IntVar()
@@ -368,7 +360,7 @@ DateofOrder.set(time.strftime("%d/%m/%Y"))
 
 #Widget created
 # f1aa == left hand box
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DRINKS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 Latte = Checkbutton(f1aa, text="Latte \t\t", variable = var1, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 0, sticky = W)
 Espresso = Checkbutton(f1aa, text="Espresso  \t\t", variable = var2, onvalue = 1, offvalue = 0,command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 1, sticky = W)
 Iced_Latte = Checkbutton(f1aa, text="Iced Latte  \t\t", variable = var3, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 2, sticky = W)
@@ -380,7 +372,7 @@ Iced_Cappuccino = Checkbutton(f1aa, text="Iced Cappuccino  \t\t", variable = var
 
 
 #f1ab == right hand box
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CAKES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 CoffeeCake= Checkbutton(f1ab, text="Coffee Cake\t", variable = var9, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 0, sticky = W)
 Red_Velvet_Cake = Checkbutton(f1ab, text="Red Velvet Cake\t", variable = var10, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 1, sticky = W)
@@ -390,7 +382,7 @@ Lagos_Chocolate_Cake = Checkbutton(f1ab, text="Lagos Chocolate Cake\t", variable
 Kilburn_Chocolate_Cake = Checkbutton(f1ab, text="Kilburn Chocolatee Cake\t", variable = var14, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 5, sticky = W)
 Carlton_Hill_Cake = Checkbutton(f1ab, text="Carlton Hill Cake\t", variable = var15, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 6, sticky = W)
 Queen_park_Cake = Checkbutton(f1ab, text="Queen's Park Chocolate Cake\t", variable = var16, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 7, sticky = W)
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Enter widget for DRINKS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 txtLatte = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Latte, state = DISABLED)
 txtLatte.grid(row = 0, column = 1)
 txtEspresso = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Espresso, state = DISABLED )
@@ -407,7 +399,7 @@ txtAmerican_Coffee = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, 
 txtAmerican_Coffee.grid(row = 6, column = 1)
 txtIced_Cappuccino = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Iced_Cappuccino, state = DISABLED )
 txtIced_Cappuccino.grid(row = 7, column = 1)
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Enter widget for CAKES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 txtCoffeeCake = Entry(f1ab, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Coffee_Cakes, state = DISABLED )
 txtCoffeeCake.grid(row = 0, column = 1)
 txtRed_Velvet_Cake = Entry(f1ab, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Red_Velvet_Cake, state = DISABLED )
@@ -426,12 +418,12 @@ txtQueen_park_Cake = Entry(f1ab, font=('arial', 16, 'bold'), bd = 8, width = 6, 
 txtQueen_park_Cake.grid(row = 7, column = 1)
 
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RECEIPT INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 lblReceipt = Label(ft2, font=('arial', 12, 'bold'), text="Receipt",bd = 2, anchor = "w")
 lblReceipt.grid(row = 0, column = 0, sticky = W)
 txtReceipt = Text(ft2, font=('arial', 11, 'bold'), width = 59, height =22, bg="white", bd=8)
 txtReceipt.grid(row = 1, column = 0)
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Cost Item INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 lblCostofDrinks = Label(f2aa, font=('arial', 16, 'bold'), text = "Cost of Drinks         \t", bd = 8, anchor="w")
 lblCostofDrinks.grid(row = 0, column = 0, sticky = W)
@@ -448,7 +440,7 @@ lblServiceCharge.grid(row = 2, column = 0, sticky = W)
 txtServiceCharge = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = ServiceCharge)
 txtServiceCharge.grid(row = 2, column = 1, sticky = W)
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Payment INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 lblPaidTax = Label(f2ab, font=('arial', 16, 'bold'), text = "Tax", bd = 8)
 lblPaidTax.grid(row = 0, column = 0, sticky = W)
 txtPaidTax = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = PaidTax)
@@ -464,7 +456,6 @@ lblTotalCost.grid(row = 2, column = 0, sticky = W)
 txtTotalCost = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = TotalCost)
 txtTotalCost.grid(row = 2, column = 1, sticky = W)
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BUTTONS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 btnTotal = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Total", command = CostofItems).grid(row = 0, column = 0)
 btnReceipt = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Receipt", command = Receipt).grid(row = 0, column = 1)
 btnReset = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Reset", command = reset).grid(row = 0, column = 2)
